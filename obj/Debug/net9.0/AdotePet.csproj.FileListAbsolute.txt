@@ -1,0 +1,14 @@
+C:\Workspace\AdotePet\bin\Debug\net9.0\AdotePet.exe
+C:\Workspace\AdotePet\bin\Debug\net9.0\AdotePet.deps.json
+C:\Workspace\AdotePet\bin\Debug\net9.0\AdotePet.runtimeconfig.json
+C:\Workspace\AdotePet\bin\Debug\net9.0\AdotePet.dll
+C:\Workspace\AdotePet\bin\Debug\net9.0\AdotePet.pdb
+C:\Workspace\AdotePet\obj\Debug\net9.0\AdotePet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\AdotePet\obj\Debug\net9.0\AdotePet.AssemblyInfoInputs.cache
+C:\Workspace\AdotePet\obj\Debug\net9.0\AdotePet.AssemblyInfo.cs
+C:\Workspace\AdotePet\obj\Debug\net9.0\AdotePet.csproj.CoreCompileInputs.cache
+C:\Workspace\AdotePet\obj\Debug\net9.0\AdotePet.dll
+C:\Workspace\AdotePet\obj\Debug\net9.0\refint\AdotePet.dll
+C:\Workspace\AdotePet\obj\Debug\net9.0\AdotePet.pdb
+C:\Workspace\AdotePet\obj\Debug\net9.0\AdotePet.genruntimeconfig.cache
+C:\Workspace\AdotePet\obj\Debug\net9.0\ref\AdotePet.dll
