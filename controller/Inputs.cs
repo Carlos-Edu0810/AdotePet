@@ -14,7 +14,22 @@ namespace AdotePet.controller
                 bool input = int.TryParse(Console.ReadLine(), out int numeroRecebido);
                 if (input == false)
                 {
-                    Console.WriteLine("Opção invalida, tente novamente: ");
+                    Console.Write("Opção invalida, tente novamente: ");
+                }
+                else
+                {
+                    return numeroRecebido;
+                }
+            }
+        }
+        public double ReceberNumeroFlutuante()
+        {
+            while (true)
+            {
+                bool input = double.TryParse(Console.ReadLine(), out double numeroRecebido);
+                if (input == false)
+                {
+                    Console.Write("Opção invalida, tente novamente: ");
                 }
                 else
                 {

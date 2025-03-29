@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Workspace\\AdotePet\\AdotePet.csproj": {}
+    "C:\\Workspace\\AdotePet\\AdotePet.csproj": {}
   },
   "projects": {
-    "c:\\Workspace\\AdotePet\\AdotePet.csproj": {
+    "C:\\Workspace\\AdotePet\\AdotePet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Workspace\\AdotePet\\AdotePet.csproj",
+        "projectUniqueName": "C:\\Workspace\\AdotePet\\AdotePet.csproj",
         "projectName": "AdotePet",
-        "projectPath": "c:\\Workspace\\AdotePet\\AdotePet.csproj",
+        "projectPath": "C:\\Workspace\\AdotePet\\AdotePet.csproj",
         "packagesPath": "C:\\Users\\ramos\\.nuget\\packages\\",
-        "outputPath": "c:\\Workspace\\AdotePet\\obj\\",
+        "outputPath": "C:\\Workspace\\AdotePet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
