@@ -20,26 +20,40 @@ namespace AdotePet.controller
             return new string(autoincrem);
         }
 
-        public string CriarAutoincremVerificado(List<Animal> animais)
+        public string CriarAutoincremVerificado(List<Animal>? animais, List<Pessoa>? pessoas = null)
         {
             string id = GerarAutoincrem();
-
             bool revalidacao;
-            do
+            if (animais != null)
             {
-                revalidacao = false;
-                for (int i = 0; i < animais.Count; i++)
+                do
                 {
-                    Console.WriteLine("Autoincrem sendo verificado...");
-                    if (animais[i].Id == id)
+                    revalidacao = false;
+                    for (int i = 0; i < animais.Count; i++)
                     {
-                        Console.WriteLine("Ja gerado...");
-                        id = GerarAutoincrem();
-                        revalidacao = true;
+                        if (animais[i].Id == id)
+                        {
+                            id = GerarAutoincrem();
+                            revalidacao = true;
+                        }
                     }
-                }
-            } while (revalidacao != false);
-            Console.WriteLine("Autoincrem validado!");
+                } while (revalidacao != false);
+            }
+            else if (pessoas != null)
+            {
+                do
+                {
+                    revalidacao = false;
+                    for (int i = 0; i < pessoas.Count; i++)
+                    {
+                        if (pessoas[i].Id == id)
+                        {
+                            id = GerarAutoincrem();
+                            revalidacao = true;
+                        }
+                    }
+                } while (revalidacao != false);
+            }
             return id;
         }
     }
