@@ -25,18 +25,7 @@ void Menu()
     {
         case 1:
             Console.Clear();
-            Console.WriteLine("=== Cadastros ===");
-            Console.WriteLine("1- Animal");
-            Console.WriteLine("2- Pessoa");
-            Console.WriteLine("3- Retornar ao Menu");
-            Console.Write("Selecione a opção desejada: ");
-            opcoesMenu = input.ReceberNumeroInteiro();
-            switch (opcoesMenu)
-            {
-                case 1: break;
-                case 2: break;
-                case 3: Menu(); break;
-            }
+            Cadastro();
             break;
         case 2: break;
         case 3: break;
