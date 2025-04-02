@@ -11,10 +11,11 @@ namespace AdotePet.controller
     {
         public List<Animal> animais = new List<Animal>();
         private Autoincrem auto = new();
-        public void CadastrarAnimal(string nome, int idade, char especie, string personalidade = "")
+        public void CadastrarAnimal(string nome, int idade, string especie, string personalidade, string historia)
         {
             string id = auto.CriarAutoincremVerificado(animais);
-            Animal novoAnimal = new(id, nome, idade, especie, personalidade);
+
+            Animal novoAnimal = new(id, nome, idade, especie, personalidade, historia);
             animais.Add(novoAnimal);
         }
 

@@ -55,5 +55,7 @@ namespace AdotePet.controller
                 }
             }
         }
+
+        public string ReceberTextoVazio(string? texto) => !string.IsNullOrEmpty(texto) ? texto : "Não Informado";
     }
 }

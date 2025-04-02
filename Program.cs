@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using AdotePet.controller;
 using AdotePet.models;
@@ -35,7 +36,7 @@ void Menu()
 
 void Cadastro()
 {
-    //Console.Clear();
+    Console.Clear();
     Console.WriteLine("=== Cadastros ===");
     Console.WriteLine("1- Animal");
     Console.WriteLine("2- Pessoa");
@@ -43,8 +44,29 @@ void Cadastro()
     int opcoesMenu = input.ReceberNumeroInteiro(Console.ReadLine());
     switch (opcoesMenu)
     {
-        case 1: break;
+        case 1:
+            Console.Clear();
+            AnimalController animal = new();
+            Console.WriteLine("=== Cadastro de Animais ===");
+            Console.Write("Nome: ");
+            string nomeAnimal = input.ReceberTexto(Console.ReadLine());
+
+            Console.Write("\nIdade: ");
+            int idadeAnimal = input.ReceberNumeroInteiro(Console.ReadLine());
+
+            Console.Write("\nEspecie: ");
+            string especie = input.ReceberTexto(Console.ReadLine());
+
+            Console.Write("\nPersonalidade: ");
+            string personalidade = input.ReceberTextoVazio(Console.ReadLine());
+
+            Console.Write("\nHistoria: ");
+            string historia = input.ReceberTextoVazio(Console.ReadLine());
+
+            animal.CadastrarAnimal(nomeAnimal, idadeAnimal, especie, personalidade, historia);
+            break;
         case 2:
+            Console.Clear();
             PessoaController pessoa = new();
             Console.WriteLine("=== Cadastro de Pessoas ===");
             Console.Write("Nome: ");
@@ -72,13 +94,3 @@ void Cadastro()
     }
     Menu();
 }
-
-
-// List<Pessoa> pessoa = new List<Pessoa>();
-// List<Animal> animal = new List<Animal>();
-// Autoincrem autoincrem = new();
-
-// string idPessoa = autoincrem.CriarAutoincremVerificado(null, pessoa);
-// string idAnimal = autoincrem.CriarAutoincremVerificado(animal);
-// Console.WriteLine($"Pessoa: {idPessoa}");
-// Console.WriteLine($"Animal: {idAnimal}");
