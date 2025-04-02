@@ -7,14 +7,15 @@ namespace AdotePet.controller
 {
     public class Inputs
     {
-        public int ReceberNumeroInteiro()
+        public int ReceberNumeroInteiro(string? inteiro)
         {
             while (true)
             {
-                bool input = int.TryParse(Console.ReadLine(), out int numeroRecebido);
+                bool input = int.TryParse(inteiro, out int numeroRecebido);
                 if (input == false)
                 {
                     Console.Write("Opção invalida, tente novamente: ");
+                    inteiro = Console.ReadLine();
                 }
                 else
                 {
@@ -38,14 +39,19 @@ namespace AdotePet.controller
             }
         }
 
-        public string ReceberTexto()
+        public string ReceberTexto(string? texto)
         {
             while (true)
             {
-                string? textoRecebido = Console.ReadLine();
-                if (!string.IsNullOrEmpty(textoRecebido))
+
+                if (!string.IsNullOrEmpty(texto))
                 {
-                    return textoRecebido;
+                    return texto;
+                }
+                else
+                {
+                    Console.Write("\nO valor informado não pode ser vazio\nTente novamente: ");
+                    texto = Console.ReadLine();
                 }
             }
         }
