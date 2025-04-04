@@ -13,7 +13,7 @@ namespace AdotePet.controller
         private Autoincrem auto = new();
         public void CadastrarAnimal(string nome, int idade, string especie, string personalidade, string historia)
         {
-            string id = auto.CriarAutoincremVerificado(animais);
+            string id = auto.CriarAutoincremVerificado(animais: animais);
 
             Animal novoAnimal = new(id, nome, idade, especie, personalidade, historia);
             animais.Add(novoAnimal);
