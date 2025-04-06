@@ -25,10 +25,14 @@ namespace AdotePet.models
                 {
                     _idade = value;
                 }
-                throw new ArgumentException("Idade tem que ser maior que 18 anos");
+                else
+                {
+                    throw new ArgumentException("Idade tem que ser maior que 18 anos");
+                }
             }
         }
         public string Endereco { get; set; }
+
         public Pessoa(string id, string nome, int idade, string endereco)
         {
             Id = id;

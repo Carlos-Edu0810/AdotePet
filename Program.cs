@@ -8,13 +8,16 @@ using AdotePet.controller;
 using AdotePet.models;
 
 Inputs input = new();
+PessoaController pessoa = new();
+AnimalController animal = new();
+pessoa.CriarCadastros();
 
 Menu();
 
 
 void Menu()
 {
-    //Console.Clear();
+    // Console.Clear();
     Console.WriteLine("=== AdotePet ===");
     Console.WriteLine("1- Cadastros");
     Console.WriteLine("2- Adotar");
@@ -28,7 +31,7 @@ void Menu()
             Cadastro();
             break;
         case 2: break;
-        case 3: break;
+        case 3: Relatorios(); break;
         case 4: Environment.Exit(0); break;
         default: Menu(); break;
     }
@@ -41,12 +44,12 @@ void Cadastro()
     Console.WriteLine("1- Animal");
     Console.WriteLine("2- Pessoa");
     Console.WriteLine("3- Retornar ao Menu");
+    Console.Write("Selecione a opção desejada: ");
     int opcoesMenu = input.ReceberNumeroInteiro(Console.ReadLine());
     switch (opcoesMenu)
     {
         case 1:
             Console.Clear();
-            AnimalController animal = new();
             Console.WriteLine("=== Cadastro de Animais ===");
             Console.Write("Nome: ");
             string nomeAnimal = input.ReceberTexto(Console.ReadLine());
@@ -67,7 +70,6 @@ void Cadastro()
             break;
         case 2:
             Console.Clear();
-            PessoaController pessoa = new();
             Console.WriteLine("=== Cadastro de Pessoas ===");
             Console.Write("Nome: ");
             string nome = input.ReceberTexto(Console.ReadLine());
@@ -86,11 +88,43 @@ void Cadastro()
 
             Console.Write("\nEndereço: ");
             string endereco = input.ReceberTexto(Console.ReadLine());
-
             pessoa.CadastrarPessoa(nome, idade, endereco);
             break;
         case 3: Menu(); break;
         default: Cadastro(); break;
     }
     Menu();
+}
+
+void Relatorios()
+{
+    Console.WriteLine("=== Relatorios  ===");
+    Console.WriteLine("1. Buscar Pessoas");
+    Console.WriteLine("2. Buscar Animais");
+    Console.WriteLine("3. Buscar Adoções");
+    Console.WriteLine("4. Voltar ao Menu");
+    Console.Write("Selecione a opção desejada: ");
+    int opcoesMenu = input.ReceberNumeroInteiro(Console.ReadLine());
+    switch (opcoesMenu)
+    {
+        case 1:
+            Console.WriteLine("Relatorio de Pessoas");
+            Console.WriteLine("1. Buscar por Nome");
+            Console.WriteLine("2. Listar todos os Cadastros");
+            Console.WriteLine("3. Retornar para Relatorios");
+            Console.WriteLine("4. Retornar para Menu");
+            int opcaoRelatorio = input.ReceberNumeroInteiro(Console.ReadLine());
+            switch (opcaoRelatorio)
+            {
+                case 1: pessoa.ListarPessoas(1); break;
+                case 2: pessoa.ListarPessoas(2); break;
+                case 3: Relatorios(); break;
+                default: Menu(); break;
+            }
+            break;
+        case 2: break;
+        case 3: break;
+        case 4: Menu(); break;
+        default: Relatorios(); break;
+    }
 }
