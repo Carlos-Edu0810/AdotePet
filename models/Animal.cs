@@ -18,11 +18,11 @@ namespace AdotePet.models
         public Animal(string id, string nome, int idade, string especie, string personalidade, string historia)
         {
             Id = id;
-            Nome = nome;
+            Nome = nome.ToUpper();
             Idade = idade;
-            Especie = especie;
-            Personalidade = personalidade;
-            Historia = historia;
+            Especie = especie.ToUpper();
+            Personalidade = personalidade.ToUpper();
+            Historia = historia.ToUpper();
         }
 
     }
