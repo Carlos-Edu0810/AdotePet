@@ -20,7 +20,7 @@ namespace AdotePet.controller
             return new string(autoincrem);
         }
 
-        public string CriarAutoincremVerificado(List<Animal>? animais, List<Pessoa>? pessoas = null)
+        public string CriarAutoincremVerificado(List<Animal>? animais)
         {
             string id = GerarAutoincrem();
             bool revalidacao;
@@ -39,7 +39,14 @@ namespace AdotePet.controller
                     }
                 } while (revalidacao != false);
             }
-            else if (pessoas != null)
+            return id;
+        }
+
+        public string CriarAutoincremVerificado(List<Pessoa>? pessoas = null)
+        {
+            string id = GerarAutoincrem();
+            bool revalidacao;
+            if (pessoas != null)
             {
                 do
                 {

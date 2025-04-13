@@ -17,7 +17,7 @@ Menu();
 
 void Menu()
 {
-    // Console.Clear();
+    // //Console.Clear();
     Console.WriteLine("=== AdotePet ===");
     Console.WriteLine("1- Cadastros");
     Console.WriteLine("2- Adotar");
@@ -39,7 +39,7 @@ void Menu()
 
 void Cadastro()
 {
-    Console.Clear();
+    //Console.Clear();
     Console.WriteLine("=== Cadastros ===");
     Console.WriteLine("1- Animal");
     Console.WriteLine("2- Pessoa");
@@ -49,7 +49,7 @@ void Cadastro()
     switch (opcoesMenu)
     {
         case 1:
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("=== Cadastro de Animais ===");
             Console.Write("Nome: ");
             string nomeAnimal = input.ReceberTexto(Console.ReadLine());
@@ -69,7 +69,7 @@ void Cadastro()
             animal.CadastrarAnimal(nomeAnimal, idadeAnimal, especie, personalidade, historia);
             break;
         case 2:
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("=== Cadastro de Pessoas ===");
             Console.Write("Nome: ");
             string nome = input.ReceberTexto(Console.ReadLine());
