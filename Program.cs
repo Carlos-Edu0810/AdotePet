@@ -10,8 +10,6 @@ using AdotePet.models;
 Inputs input = new();
 PessoaController pessoa = new();
 AnimalController animal = new();
-pessoa.CriarCadastros();
-animal.CriarCadastros();
 
 Menu();
 

@@ -9,6 +9,12 @@ Bem-vindo ao **AdotePet**, um software em desenvolvimento que tem como objetivo 
 - **Perfil do Adotante**: Criar perfis para interessados em adoção, facilitando o processo de compatibilidade.
 - **Acompanhamento de Adoções**: Registro e acompanhamento do processo de adoção.
 
+## Tecnologias Utilizadas
+
+- **C# (.NET)**: Linguagem base do projeto.
+- **Newtonsoft.Json**: Biblioteca utilizada para serializar e desserializar dados em formato JSON.
+- **Armazenamento Local em JSON**: Os dados do sistema (como animais cadastrados) são armazenados em um arquivo `.json` local, simulando um banco de dados.
+
 ## Status do Projeto
 
 ⚠️ **Este software está em desenvolvimento.** Algumas funcionalidades podem estar incompletas ou sujeitas a alterações. Agradecemos sua paciência e apoio enquanto trabalhamos para entregar uma solução completa e funcional.

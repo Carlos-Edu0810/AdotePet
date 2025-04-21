@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AdotePet.controller;
 using AdotePet.models;
+using Newtonsoft.Json;
 
 namespace AdotePet.controller
 {
@@ -12,36 +14,33 @@ namespace AdotePet.controller
         public List<Animal> animais = new List<Animal>();
         private Autoincrem auto = new();
         Inputs input = new();
+        string serializado = string.Empty;
+        const string diretorio = @"C:\Workspace\AdotePet\Database\Animais.Json";
 
-        /*
-            1. X8F2B1LZQ7MA
-            2. N3KJ9W0T2VCE
-            3. H7X2LZQ9N5RB
-            4. M1P9T6KD8WJQ
-            5. B4ZT3YVWQ9LN
-
-        */
-
-        public void CriarCadastros()
+        private List<Animal> ListaDeAnimais()
         {
-            animais.Add(new Animal("X8F2B1LZQ7MA", "Sinistra", 9, "Gato", "Carinhosa", "Não informado"));
-            animais.Add(new Animal("N3KJ9W0T2VCE", "Thor", 5, "Cachorro", "Protetor", "Não informado"));
-            animais.Add(new Animal("H7X2LZQ9N5RB", "Mimi", 2, "Gato", "Brincalhona", "Não informado"));
-            animais.Add(new Animal("M1P9T6KD8WJQ", "Luna", 4, "Coelho", "Curiosa", "Não informado"));
-            animais.Add(new Animal("B4ZT3YVWQ9LN", "Spike", 7, "Cachorro", "Agitado", "Não informado"));
-
+            serializado = File.ReadAllText(diretorio);
+            List<Animal> listaDeAnimais = JsonConvert.DeserializeObject<List<Animal>>(serializado) ?? new List<Animal>();
+            return listaDeAnimais;
+        }
+        private void AdicionarNaLista(Animal animal)
+        {
+            animais = ListaDeAnimais();
+            animais.Add(animal);
+            serializado = JsonConvert.SerializeObject(animais, Formatting.Indented);
+            File.WriteAllText(diretorio, serializado);
         }
 
         public void CadastrarAnimal(string nome, int idade, string especie, string personalidade, string historia)
         {
             string id = auto.CriarAutoincremVerificado(animais);
-
             Animal novoAnimal = new(id, nome, idade, especie, personalidade, historia);
-            animais.Add(novoAnimal);
+            AdicionarNaLista(novoAnimal);
         }
 
         public void ListarAnimais(int listarOpcoes)
         {
+            animais = ListaDeAnimais();
             switch (listarOpcoes)
             {
                 case 1:
