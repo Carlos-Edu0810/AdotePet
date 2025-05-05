@@ -9,7 +9,7 @@ namespace AdotePet.controller
 {
     public class PessoaController
     {
-        public List<Pessoa> pessoas = new List<Pessoa>();
+        private List<Pessoa> pessoas = new List<Pessoa>();
         Inputs input = new();
         Autoincrem autoincrem = new();
         private string serializado = string.Empty;
@@ -21,7 +21,6 @@ namespace AdotePet.controller
             List<Pessoa> listaDePessoas = JsonConvert.DeserializeObject<List<Pessoa>>(serializado) ?? new List<Pessoa>();
             return listaDePessoas;
         }
-
         private void AdicionarNaLista(Pessoa pessoa)
         {
             pessoas = ListaDePessoas();
@@ -75,6 +74,16 @@ namespace AdotePet.controller
                     }
                     break;
                 case 3: break;
+            }
+        }
+
+        public Pessoa this[int index]
+        {
+            // get => pessoas[index];
+            get
+            {
+                pessoas = ListaDePessoas();
+                return pessoas[index];
             }
         }
     }

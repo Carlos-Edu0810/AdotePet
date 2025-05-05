@@ -1,0 +1,38 @@
+[
+  {
+    "PessoaAdotante": {
+      "Id": "J6OEEF4R4FGJ",
+      "Nome": "Carlos Ramos",
+      "Idade": 23,
+      "Endereco": "Rua Humaia, 155"
+    },
+    "AnimalAdotado": {
+      "Id": "X8F2B1LZQ7MA",
+      "Nome": "SINISTRA",
+      "Idade": 9,
+      "Especie": "GATO",
+      "Personalidade": "CARINHOSA",
+      "Historia": "NÃO INFORMADO",
+      "AdocaoDisponivel": "S"
+    },
+    "DataAdocao": "2025-05-04T22:10:13.5378626-03:00"
+  },
+  {
+    "PessoaAdotante": {
+      "Id": "002",
+      "Nome": "Bruno",
+      "Idade": 30,
+      "Endereco": "Av. Central, 200"
+    },
+    "AnimalAdotado": {
+      "Id": "M1P9T6KD8WJQ",
+      "Nome": "LUNA",
+      "Idade": 4,
+      "Especie": "COELHO",
+      "Personalidade": "CURIOSA",
+      "Historia": "NÃO INFORMADO",
+      "AdocaoDisponivel": "S"
+    },
+    "DataAdocao": "2025-05-04T22:11:17.9843922-03:00"
+  }
+]

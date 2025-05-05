@@ -14,8 +14,9 @@ namespace AdotePet.models
         public string Especie { get; set; }
         public string Personalidade { get; set; }
         public string Historia { get; set; }
+        public char AdocaoDisponivel { get; set; }
 
-        public Animal(string id, string nome, int idade, string especie, string personalidade, string historia)
+        public Animal(string id, string nome, int idade, string especie, string personalidade, string historia, char adocaoDisponivel)
         {
             Id = id;
             Nome = nome.ToUpper();
@@ -23,6 +24,7 @@ namespace AdotePet.models
             Especie = especie.ToUpper();
             Personalidade = personalidade.ToUpper();
             Historia = historia.ToUpper();
+            AdocaoDisponivel = adocaoDisponivel;
         }
 
     }

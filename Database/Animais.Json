@@ -5,7 +5,8 @@
     "Idade": 9,
     "Especie": "GATO",
     "Personalidade": "CARINHOSA",
-    "Historia": "NÃO INFORMADO"
+    "Historia": "NÃO INFORMADO",
+    "AdocaoDisponivel": "N"
   },
   {
     "Id": "N3KJ9W0T2VCE",
@@ -13,7 +14,8 @@
     "Idade": 5,
     "Especie": "CACHORRO",
     "Personalidade": "PROTETOR",
-    "Historia": "NÃO INFORMADO"
+    "Historia": "NÃO INFORMADO",
+    "AdocaoDisponivel": "S"
   },
   {
     "Id": "H7X2LZQ9N5RB",
@@ -21,7 +23,8 @@
     "Idade": 2,
     "Especie": "GATO",
     "Personalidade": "BRINCALHONA",
-    "Historia": "NÃO INFORMADO"
+    "Historia": "NÃO INFORMADO",
+    "AdocaoDisponivel": "S"
   },
   {
     "Id": "M1P9T6KD8WJQ",
@@ -29,7 +32,8 @@
     "Idade": 4,
     "Especie": "COELHO",
     "Personalidade": "CURIOSA",
-    "Historia": "NÃO INFORMADO"
+    "Historia": "NÃO INFORMADO",
+    "AdocaoDisponivel": "N"
   },
   {
     "Id": "B4ZT3YVWQ9LN",
@@ -37,7 +41,8 @@
     "Idade": 7,
     "Especie": "CACHORRO",
     "Personalidade": "AGITADO",
-    "Historia": "NÃO INFORMADO"
+    "Historia": "NÃO INFORMADO",
+    "AdocaoDisponivel": "S"
   },
   {
     "Id": "V3YDIT6EDN91",
@@ -45,6 +50,7 @@
     "Idade": 2,
     "Especie": "CACHORRO",
     "Personalidade": "TEMPERAMENTAL",
-    "Historia": "NÃO INFORMADO"
+    "Historia": "NÃO INFORMADO",
+    "AdocaoDisponivel": "N"
   }
 ]

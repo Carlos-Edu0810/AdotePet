@@ -11,11 +11,23 @@ namespace AdotePet.controller
 {
     public class AnimalController
     {
-        public List<Animal> animais = new List<Animal>();
+        private List<Animal> animais = new List<Animal>();
         private Autoincrem auto = new();
         Inputs input = new();
         string serializado = string.Empty;
         const string diretorio = @"C:\Workspace\AdotePet\Database\Animais.Json";
+
+        public List<Animal> AnimalDisponivelParaAdocao() => ListaDeAnimais().Where(x => x.AdocaoDisponivel == 'S').ToList();
+        public void AnimalAdotado(Animal adotado)
+        {
+            animais = ListaDeAnimais();
+            int localizarAnimal = animais.FindIndex(x => x.Id == adotado.Id);
+
+            adotado.AdocaoDisponivel = 'N';
+            animais[localizarAnimal] = adotado;
+
+            AtualizarLista(animais);
+        }
 
         private List<Animal> ListaDeAnimais()
         {
@@ -27,6 +39,10 @@ namespace AdotePet.controller
         {
             animais = ListaDeAnimais();
             animais.Add(animal);
+            AtualizarLista(animais);
+        }
+        private void AtualizarLista(List<Animal> listaAnimal)
+        {
             serializado = JsonConvert.SerializeObject(animais, Formatting.Indented);
             File.WriteAllText(diretorio, serializado);
         }
@@ -34,7 +50,7 @@ namespace AdotePet.controller
         public void CadastrarAnimal(string nome, int idade, string especie, string personalidade, string historia)
         {
             string id = auto.CriarAutoincremVerificado(animais);
-            Animal novoAnimal = new(id, nome, idade, especie, personalidade, historia);
+            Animal novoAnimal = new(id, nome, idade, especie, personalidade, historia, 'S');
             AdicionarNaLista(novoAnimal);
         }
 
@@ -109,5 +125,14 @@ namespace AdotePet.controller
             }
         }
 
+        public Animal this[int index]
+        {
+            // get => animais[index];
+            get
+            {
+                animais = ListaDeAnimais();
+                return animais[index];
+            }
+        }
     }
 }
