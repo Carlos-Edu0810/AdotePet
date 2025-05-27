@@ -1,7 +1,5 @@
 # AdotePet
 
----
-
 Este projeto, **AdotePet**, é uma aplicação de console desenvolvida em C# para simular um sistema de gerenciamento de adoção de animais. Ele foi criado por **Carlos Ramos** com propósitos didáticos, explorando conceitos de programação orientada a objetos (POO), manipulação de arquivos JSON para persistência de dados e interatividade via console.
 
 ## Funcionalidades
