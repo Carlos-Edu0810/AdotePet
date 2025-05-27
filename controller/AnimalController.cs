@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AdotePet.controller;
@@ -22,14 +23,12 @@ namespace AdotePet.controller
         {
             animais = ListaDeAnimais();
             int localizarAnimal = animais.FindIndex(x => x.Id == adotado.Id);
-
             adotado.AdocaoDisponivel = 'N';
             animais[localizarAnimal] = adotado;
-
             AtualizarLista(animais);
         }
 
-        private List<Animal> ListaDeAnimais()
+        public List<Animal> ListaDeAnimais()
         {
             serializado = File.ReadAllText(diretorio);
             List<Animal> listaDeAnimais = JsonConvert.DeserializeObject<List<Animal>>(serializado) ?? new List<Animal>();
@@ -120,6 +119,25 @@ namespace AdotePet.controller
                     else
                     {
                         Console.WriteLine("Não existe animais cadastros");
+                    }
+                    break;
+                case 4:
+                    if (animais.Exists(x => x.AdocaoDisponivel == 'S'))
+                    {
+                        foreach (Animal animal in AnimalDisponivelParaAdocao())
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine($"ID: {animal.Id}");
+                            Console.WriteLine($"Nome: {animal.Nome}");
+                            Console.WriteLine($"Idade: {animal.Idade}");
+                            Console.WriteLine($"Especie: {animal.Especie}");
+                            Console.WriteLine($"Personaldade: {animal.Personalidade}");
+                            Console.WriteLine($"Historia: {animal.Historia}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Não existe animais disponiveis para adoção");
                     }
                     break;
             }

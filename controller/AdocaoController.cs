@@ -18,7 +18,7 @@ namespace AdotePet.controller
         public string RegistrarAdocao(Pessoa adotante, Animal adotado, out string status)
         {
             List<Animal> animaisDisponiveis = Animal.AnimalDisponivelParaAdocao();
-            if (animaisDisponiveis.FindIndex(x => x.Nome == adotado.Nome) != -1 && adotado.AdocaoDisponivel == 'S')
+            if (animaisDisponiveis.FindIndex(x => x.Id == adotado.Id) != -1 && adotado.AdocaoDisponivel == 'S')
             {
                 RegistrarAdocao(new Adocao(adotante, adotado, DateTime.Now));
                 Animal.AnimalAdotado(adotado);
@@ -33,7 +33,7 @@ namespace AdotePet.controller
 
         }
 
-        private List<Adocao> ListaDeAdocoes()
+        public List<Adocao> ListaDeAdocoes()
         {
             AdocoesSerializadas = File.ReadAllText(Diretorio);
             // AdocoesSerializadas = string.IsNullOrEmpty(File.ReadAllText(Diretorio)) ? string.Empty : File.ReadAllText(Diretorio);

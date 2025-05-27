@@ -15,7 +15,7 @@ namespace AdotePet.controller
         private string serializado = string.Empty;
         private const string diretorio = @"C:\Workspace\AdotePet\Database\Pessoas.Json";
 
-        private List<Pessoa> ListaDePessoas()
+        public List<Pessoa> ListaDePessoas()
         {
             string serializado = File.ReadAllText(diretorio);
             List<Pessoa> listaDePessoas = JsonConvert.DeserializeObject<List<Pessoa>>(serializado) ?? new List<Pessoa>();
