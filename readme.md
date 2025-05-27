@@ -1,19 +1,19 @@
-# AdotePet
+# AdotePet 🐾
 
 Este projeto, **AdotePet**, é uma aplicação de console desenvolvida em C# para simular um sistema de gerenciamento de adoção de animais. Ele foi criado por **Carlos Ramos** com propósitos didáticos, explorando conceitos de programação orientada a objetos (POO), manipulação de arquivos JSON para persistência de dados e interatividade via console.
 
-## Funcionalidades
+## Funcionalidades ✨
 
 O sistema **AdotePet** permite:
 
-* **Cadastro de Animais:** Registre novos animais com informações como nome, idade, espécie, personalidade e histórico.
-* **Cadastro de Pessoas:** Cadastre pessoas interessadas em adotar, com nome, idade (maiores de 18 anos) e endereço.
-* **Registro de Adoções:** Associe um animal disponível a uma pessoa apta a adotar.
-* **Relatórios:**
+* **Cadastro de Animais:** 🐶 Registre novos animais com informações como nome, idade, espécie, personalidade e histórico.
+* **Cadastro de Pessoas:** 🧑‍🦱 Cadastre pessoas interessadas em adotar, com nome, idade (maiores de 18 anos) e endereço.
+* **Registro de Adoções:** ❤️‍🩹 Associe um animal disponível a uma pessoa apta a adotar.
+* **Relatórios:** 📊
     * Buscar pessoas por nome ou listar todos os cadastros.
     * Buscar animais por nome ou espécie, listar todos os animais ou listar apenas os animais disponíveis para adoção.
 
-## Estrutura do Projeto
+## Estrutura do Projeto 🏗️
 
 O projeto é dividido em módulos para organizar as responsabilidades:
 
@@ -29,7 +29,7 @@ O projeto é dividido em módulos para organizar as responsabilidades:
     * **`Animal.cs`**: Define a estrutura de um animal, incluindo suas características e status de disponibilidade para adoção.
     * **`Pessoa.cs`**: Define a estrutura de uma pessoa, incluindo suas informações pessoais.
 
-## Persistência de Dados
+## Persistência de Dados 💾
 
 Os dados são armazenados em arquivos JSON localmente, simulando um banco de dados simples. Os arquivos são salvos no diretório `C:\Workspace\AdotePet\Database\` e incluem:
 
@@ -37,7 +37,7 @@ Os dados são armazenados em arquivos JSON localmente, simulando um banco de dad
 * `Pessoas.Json`
 * `Adocoes.Json`
 
-## Como Executar
+## Como Executar ▶️
 
 Para executar este projeto, siga os passos abaixo:
 
@@ -49,6 +49,6 @@ Para executar este projeto, siga os passos abaixo:
 
 O sistema será iniciado no console, apresentando o menu principal para interação.
 
-## Contribuição
+## Contribuição 🤝
 
 Este projeto é um esforço pessoal e didático de **Carlos Ramos**. Sugestões e melhorias são bem-vindas para fins de aprendizado e aprimoramento do código.
